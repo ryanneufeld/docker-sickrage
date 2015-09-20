@@ -7,7 +7,10 @@ EXPOSE 8081/tcp
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qq update
-RUN apt-get -yf install supervisor python python-pip unzip libssl-dev git python-dev unrar-free
+RUN apt-get -yf install software-properties-common
+RUN apt-add-repository multiverse
+RUN apt-get -qq update
+RUN apt-get -yf install supervisor python python-pip unzip libssl-dev git python-dev unrar
 
 RUN mkdir /sickrage
 

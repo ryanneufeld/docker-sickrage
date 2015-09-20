@@ -17,4 +17,4 @@ RUN mv /sickrage/autoProcessTV/autoProcessTV.cfg.sample /sickrage/autoProcessTV/
 
 ADD conf/sickrage.ini /sickrage/config.ini
 
-RUN /sickrage/SickBeard.py
+CMD ['/sickrage/SickBeard.py']

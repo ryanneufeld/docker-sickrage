@@ -7,7 +7,7 @@ EXPOSE 8081/tcp
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qq update
-RUN apt-get -yf install wget python python-pip unzip libssl-dev git
+RUN apt-get -yf install python python-pip unzip libssl-dev git python-dev
 
 RUN mkdir /sickrage
 

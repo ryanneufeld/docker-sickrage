@@ -7,7 +7,7 @@ EXPOSE 8081/tcp
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get -qq update
-RUN apt-get -yf install supervisor python python-pip unzip libssl-dev git python-dev
+RUN apt-get -yf install supervisor python python-pip unzip libssl-dev git python-dev unrar-free
 
 RUN mkdir /sickrage
 
@@ -17,7 +17,7 @@ RUN mv /sickrage/autoProcessTV/autoProcessTV.cfg.sample /sickrage/autoProcessTV/
 
 RUN mkdir -p /sickrage/logs/supervisor/
 
-ADD conf/sickrage.ini /sickrage/config.ini
+#ADD conf/sickrage.ini /sickrage/config.ini
 ADD conf/supervisord.conf /etc/supervisor/conf.d/sickrage.conf
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/sickrage.conf"]
